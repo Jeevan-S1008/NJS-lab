@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module("MyApp", []);
+        app.controller("MyCtrl", function ($scope) {
+            $scope.students = [
+                { name: 'JAI', cgpa: 9.1,usn:"1",branch: "CSE"},
+                { name: 'SHREE', cgpa: 9.2,usn:"2",branch: "ISE"},
+                { name: 'RAM', cgpa: 9.3, usn:"3",branch: "EEE" },
+                { name: 'CHANDRA', cgpa: 9.4, usn:"4",branch: "ECE" }
+
+            ];
+        });
+    </script>
+</head>
+
+<body ng-app="MyApp">
+    <center>
+    <div ng-controller="MyCtrl">
+        <h3>Student Details</h2>
+            <p>Total no. of student details:{{students.length}}</p>
+            <table border="2">
+                <tr>
+                    <th>Name</th>
+                    <th>CGPA</th>
+                    <th>USN</th>
+                    <th>Branch</th>
+                </tr>
+                <tr ng-repeat="student in students">
+                    <td>{{student.name}}</td>
+                    <td>{{student.cgpa}}</td>
+                    <td>{{student.usn}}</td>
+                    <td>{{student.branch}}</td>
+
+                </tr>
+            </table>
+    </div>
+</center>
+
+</body>
+
+</html>
